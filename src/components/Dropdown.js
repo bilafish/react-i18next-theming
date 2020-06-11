@@ -9,7 +9,15 @@ const languageMap = {
 const languages = ["English", "Dutch", "Japanese"];
 
 const special = {
-  bgColor: "darkslategray",
+  en: {
+    bgColor: "#3a386f",
+  },
+  de: {
+    bgColor: "#20458c",
+  },
+  jp: {
+    bgColor: "#bd002e",
+  },
 };
 
 const Dropdown = ({ changeLanguage, setTheme }) => {
@@ -23,7 +31,7 @@ const Dropdown = ({ changeLanguage, setTheme }) => {
             onClick={() => {
               setSelectedLanguage(language);
               changeLanguage(languageMap[language]);
-              setTheme(special);
+              setTheme(special[languageMap[language]]);
             }}
           >
             {language}
